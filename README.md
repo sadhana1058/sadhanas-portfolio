@@ -1,7 +1,7 @@
 # sadhanas-portfolio
 
 
-# Personal Portfolio — [Your Name]
+# Personal Portfolio 
 
 This is a modern, responsive personal portfolio built with **React** and **Vite**. It showcases my background, technical skills, and selected projects in a clean and accessible format.
 
