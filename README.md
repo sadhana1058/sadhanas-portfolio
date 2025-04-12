@@ -1,13 +1,13 @@
 # sadhanas-portfolio
 
-```markdown
+
 # Personal Portfolio — [Your Name]
 
 This is a modern, responsive personal portfolio built with **React** and **Vite**. It showcases my background, technical skills, and selected projects in a clean and accessible format.
 
 > Live Demo: [your-portfolio-link.com](https://your-portfolio-link.com)
 
----
+
 
 ## Features
 
@@ -18,7 +18,7 @@ This is a modern, responsive personal portfolio built with **React** and **Vite*
 - Contact form with email integration
 - Fully responsive layout for all devices
 
----
+
 
 ## Technologies Used
 
@@ -28,7 +28,7 @@ This is a modern, responsive personal portfolio built with **React** and **Vite*
 - React Icons
 - EmailJS / Formspree (for contact form functionality)
 
----
+
 
 ## Getting Started
 
@@ -50,7 +50,7 @@ To run this project locally:
    npm run dev
    ```
 
----
+
 
 ## Project Structure
 
@@ -68,7 +68,7 @@ portfolio/
 └── vite.config.js
 ```
 
----
+
 
 ## Deployment
 
@@ -85,7 +85,7 @@ To build the project for production:
 npm run build
 ```
 
----
+
 
 ## Contact
 
@@ -94,10 +94,8 @@ If you'd like to connect, feel free to reach out via:
 - LinkedIn: [linkedin.com/in/sadhana](https://www.linkedin.com/in/sadhana-saravanan-5aa7a21b1/)
 - Email: [sadhana1031582@gmail.com](mailto:sadhana1031582@gmail.com]
 
----
 
 ## License
 
 This project is open-source and available under the [MIT License](LICENSE).
-```
 
