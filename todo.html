@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickTask - To-Do List</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f2f5;
+      padding: 2rem;
+      max-width: 500px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+    }
+    #taskInput {
+      width: 80%;
+      padding: 10px;
+    }
+    #addBtn {
+      padding: 10px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: white;
+      margin: 10px 0;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 5px;
+    }
+    .done {
+      text-decoration: line-through;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+  <h1>QuickTask</h1>
+  <input type="text" id="taskInput" placeholder="Enter new task" />
+  <button id="addBtn">Add</button>
+  <ul id="taskList"></ul>
+
+  <script>
+    const taskInput = document.getElementById("taskInput");
+    const taskList = document.getElementById("taskList");
+    const addBtn = document.getElementById("addBtn");
+
+    // Load from localStorage
+    window.onload = () => {
+      const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+      savedTasks.forEach(addTaskToDOM);
+    };
+
+    addBtn.addEventListener("click", () => {
+      const task = taskInput.value.trim();
+      if (task) {
+        addTaskToDOM(task);
+        saveTask(task);
+        taskInput.value = "";
+      }
+    });
+
+    function addTaskToDOM(task) {
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <span>${task}</span>
+        <div>
+          <button onclick="markDone(this)">✅</button>
+          <button onclick="deleteTask(this)">❌</button>
+        </div>`;
+      taskList.appendChild(li);
+    }
+
+    function markDone(btn) {
+      const span = btn.parentElement.previousElementSibling;
+      span.classList.toggle("done");
+    }
+
+    function deleteTask(btn) {
+      const li = btn.closest("li");
+      li.remove();
+      updateStorage();
+    }
+
+    function saveTask(task) {
+      const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+      tasks.push(task);
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    function updateStorage() {
+      const updated = [...document.querySelectorAll("li span")].map(span => span.textContent);
+      localStorage.setItem("tasks", JSON.stringify(updated));
+    }
+  </script>
+</body>
+</html>
